@@ -17,10 +17,11 @@ int main () {
     cout << count(xs.begin(), xs.end(), 1) << endl;  //Количество единиц в веторе xs
 //Функции begin и end в коде означают, что операция проводится над всем содержимым вектора.
     const vector<string> escapees = {"cat"s, "dog"s, "parrot"s, "cat"s, "rat"s, "parrot"s, "cat"s, "dog"s};
-    cout << count(escapees.begin(), escapees.end(), "parrot"s);
+    cout << count(escapees.begin(), escapees.end(), "parrot"s) << endl;
 
 
 //count_if принимает третьим аргументом не значение, а ссылку на функцию и считает значения в контейнере, для которых эта функция возвращает true
     int num_positive = count_if(xs.begin(), xs.end(), IsPositive);
     cout << num_positive << endl;
+
 }
