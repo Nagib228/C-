@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <utility>
 
 using namespace std;
 
@@ -14,10 +13,10 @@ int main() {
         string name;
         int age;
         cin >> name >> age;
-        human.push_back(make_pair(age, name));
-        sort(human.begin(), human.end());
-        reverse(human.begin(), human.end());
+        human.push_back({age, name});
     }
+    sort(human.begin(), human.end());
+    reverse(human.begin(), human.end());
     for (const auto& i : human) {
         cout << i.second << endl;
     }
