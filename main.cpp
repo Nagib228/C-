@@ -5,23 +5,25 @@
 
 using namespace std;
 
-// 1.2.3 АЛГОРИТМЫ count И count_if
+// 1.2.4 АЛГОРИТМЫ sort и reverse
 
-bool IsPositive(int x) {
-    return x > 0;
-}
+int main() {
+    vector<int> numbers = {5, 12, 254, 32345, 1, 0, -2, 921,22};
+    // sort сортирует указанный контейнер или обычный массив по возрастанию
+    sort(numbers.begin(), numbers.end());
+    for (int i : numbers) {
+        cout << i << endl;
+    }
 
-// count - сколько раз конкретный элемент встречается в контейнере
-int main () {
-    const vector<int> xs = {1, 2, 1, 1, 5};
-    cout << count(xs.begin(), xs.end(), 1) << endl;  //Количество единиц в веторе xs
-//Функции begin и end в коде означают, что операция проводится над всем содержимым вектора.
-    const vector<string> escapees = {"cat"s, "dog"s, "parrot"s, "cat"s, "rat"s, "parrot"s, "cat"s, "dog"s};
-    cout << count(escapees.begin(), escapees.end(), "parrot"s) << endl;
+    vector<string> some_string = {"aue"s, "sex"s, "pistol"s, "bee"s, "zoo", "counts"s};
+    sort(some_string.begin(), some_string.end());
+     for (const auto& i: some_string) {
+        cout << i << endl;
+    }
 
-
-//count_if принимает третьим аргументом не значение, а ссылку на функцию и считает значения в контейнере, для которых эта функция возвращает true
-    int num_positive = count_if(xs.begin(), xs.end(), IsPositive);
-    cout << num_positive << endl;
-
+    vector<pair<int,string>> number_names = {{5, "John"s}, {2, "Millisa"s}, {1, "Oleg"s}, {3, "Chuperka"s}, {4, "Madness"s}};
+    sort(number_names.begin(), number_names.end());
+    for (const auto& i : number_names) {
+        cout << i.first << " " << i.second << endl;
+    }
 }
